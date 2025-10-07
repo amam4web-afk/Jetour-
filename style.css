@@ -1,0 +1,14 @@
+/*
+Theme Name: Jetour Conversion
+*/
+
+/* Styles for Sticky Anchor Bar */
+#anchor-pc-point.is-fixed,
+#anchor-mb-point.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
