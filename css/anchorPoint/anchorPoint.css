@@ -1,0 +1,100 @@
+.anchor-point-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2c2e2e;
+  padding: 0 0.8rem;
+  height: 70px;
+}
+.anchor-point-box img { width: 2rem; margin-right: 1.1rem; }
+.anchor-point-box .anchor-point {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.anchor-point-box .anchor-point li {
+  color: #bbb;
+  font-size: 0.16rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  height: calc(100% - 0.05rem);
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+.anchor-point-box .anchor-point .scroll-nav-active {
+  color: #fff;
+  border-bottom: 0.05rem solid #39aeb2;
+}
+.anchor-point-box .btn {
+  width: 2rem;
+  height: 0.43rem;
+  border: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.16rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* --- Mobile Styles --- */
+.anchor-point-box-mb {
+  display: flex;
+  align-items: center;
+  background-color: #2d2d2d;
+  color: #fff;
+  height: 1.1rem;
+}
+.anchor-point-box-mb .test-drive-box {
+  width: 3.27rem;
+  padding: 0.2rem;
+  height: 100%;
+  box-shadow: 0.14rem 0.05rem 0.19rem 0.02rem rgba(0, 0, 0, 0.3);
+}
+.anchor-point-box-mb .test-drive-box .test-drive {
+  border: 1px solid #8c8c8c;
+  font-size: 0.26rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.anchor-point-box-mb img { width: 2rem; padding: 0 0.3rem; }
+.anchor-point-box-mb ul {
+  overflow-x: auto;
+  white-space: nowrap;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.anchor-point-box-mb ul li {
+  margin: 0 0.2rem;
+  line-height: 1rem;
+  display: inline-block;
+  height: 100%;
+  font-size: 0.26rem;
+  color: rgba(255, 255, 255, 0.44);
+  list-style-type: none;
+}
+.scroll-nav-active-mb {
+  color: white !important;
+  font-weight: bold;
+  position: relative;
+}
+.scroll-nav-active-mb::after {
+  width: 100%;
+  height: 0.05rem;
+  background-color: #39aeb2;
+  position: absolute;
+  display: block;
+  bottom: 0;
+  content: "";
+}
+

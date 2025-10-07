@@ -1,0 +1,1945 @@
+@charset "UTF-8";
+#chat {
+  position: fixed;
+  z-index: 2500;
+  right: 0.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  bottom: 0.75rem;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#chat img {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+:root {
+  /* 聊天窗口中我发出去的消息的背景色 */
+  --user-chat-background-color: #9ac2b8;
+  /* 聊天窗口中，对方发过来的消息的背景色 */
+  --otherUser-chat-background-color: #feffff;
+  /* 背景色-聊天列表的背景色、一对一聊天窗口底部的背景色 */
+  --background-color: white;
+}
+
+html,
+body {
+  margin: 0rem;
+  /* background-color: #EFF0F1; */
+}
+
+/* 去掉点击外围的大黄色框框 */
+input,
+button {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#kefu {
+  position: fixed;
+  z-index: 4000;
+  width: 5.22rem;
+  height: 8rem;
+  overflow: hidden;
+  bottom: 0.3rem;
+  right: 0.3rem;
+  display: none;
+  border-radius: 0.05rem;
+}
+
+/* 头部 */
+.chat_header {
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #f5fffd;
+  height: 0.55rem;
+  font-size: 0.14rem;
+  overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 5.22rem;
+  z-index: 99999;
+  padding: 0 0.3rem;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-radius: 0.05rem 0.05rem 0 0;
+  cursor: pointer;
+}
+
+.chat_header .title {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.chat_header .title nickname,
+.chat_header .title #nickname {
+  color: #f5fffd;
+  font-size: 0.14rem;
+  width: 1.1rem;
+  display: block;
+}
+
+.chat_header .title img {
+  display: block;
+  width: 0.2rem;
+  cursor: pointer;
+}
+
+/*  聊天列表， list.html  */
+#chatlist .item {
+  width: 100%;
+  overflow: hidden;
+  border-bottom-color: #e6e6e6;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: #494949;
+}
+
+#chatlist .item .head {
+  float: left;
+  background-image: url(../images/head.png);
+  background-repeat: round;
+  width: 3.2rem;
+  margin-top: 0.3rem;
+  height: 3.2rem;
+  border-radius: 2rem;
+  margin-right: 1rem;
+}
+
+#chatlist .item .nickname {
+  font-size: 1rem;
+  font-weight: bold;
+  padding-top: 0.35rem;
+}
+
+#chatlist .item .time {
+  float: right;
+  font-weight: normal;
+  font-size: 0.8rem;
+  padding-top: 0.1rem;
+}
+
+#chatlist .item .num {
+  float: right;
+  margin-top: 0.5rem;
+  margin-right: 0.3rem;
+}
+
+/* 未读消息的点 */
+#chatlist .item .num > div {
+  background: #f00;
+  border-radius: 3rem;
+  width: 0.65rem;
+  height: 0.65rem;
+}
+
+#chatlist .item .text {
+  width: 10rem;
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 1.1rem;
+}
+
+/* 没有聊天记录 */
+#chatlist .not_hostory_list {
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  color: gray;
+}
+
+/* 在线聊天沟通，chat.html */
+#mobile .chat_header {
+  position: absolute;
+  overflow: hidden;
+}
+
+#mobile .chat_header .title #onlineState {
+  font-size: 0.6rem;
+  margin-left: 0.3rem;
+}
+
+/* 新消息提醒 */
+#mobile #newMessageRemind {
+  position: absolute;
+  margin-top: 2.7rem;
+  z-index: 999999;
+  font-size: 0.8rem;
+  padding-left: 1rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  background: var(--background-color);
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: none;
+}
+
+#mobile #newMessageRemind #newMessageRemindText {
+  display: inline;
+  float: left;
+  width: 85%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+#mobile #newMessageRemind #newMessageRemindClose {
+  float: right;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#chatcontent {
+  background-color: #f8f8f8;
+  font-size: 0.18rem;
+  height: 100%;
+  overflow: scroll;
+  max-height: 100%;
+  padding-top: 0.55rem;
+  position: absolute;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-bottom: 2.8rem;
+}
+
+.chats:last-child {
+  margin-bottom: 14rem;
+}
+
+.chat {
+  padding-left: 0.3rem;
+  padding-top: 0.2rem;
+  overflow: auto;
+  background-color: #f8f8f8;
+}
+
+.chat .head {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 0.42rem;
+  margin-top: 0.56rem;
+  height: 0.42rem;
+  border-radius: 50%;
+}
+
+.chat .text {
+  background-color: #feffff;
+  color: #333;
+  max-width: 100%;
+  margin-left: 0.6rem;
+  border-radius: 0 0.1rem 0.1rem 0.1rem;
+  font-size: 0.19rem;
+  padding: 0.13rem 0.2rem;
+  margin-top: 0.7rem;
+  margin-right: 0.3rem;
+  text-align: left;
+  line-height: 0.3rem;
+  font-family: Roboto-Regular;
+}
+.chat .text a {
+  color: #4e9684;
+}
+.chat .text a:hover {
+  text-decoration: underline;
+}
+.AUTO_REPLY .text {
+  font-family: Roboto-Black;
+}
+
+/* 沟通的对方，聊天左侧一方 */
+.otherUser .head {
+  float: left;
+  background-image: url(/images/chat/avatar-left.png) !important;
+}
+
+.otherUser .sanjiao {
+  float: left;
+  margin-left: 0.1rem;
+  margin-top: 0.7rem;
+  width: 0;
+  height: 0;
+  border-width: 0rem 0.1rem 0.1rem 0;
+  border-style: solid;
+  border-color: transparent var(--otherUser-chat-background-color) transparent
+    transparent;
+  /*透明 灰 透明 透明 */
+}
+
+/* 自己，聊天右侧的一方 */
+.user .head {
+  float: right;
+  margin-right: 0.3rem;
+  background-image: url(/images/chat/avatar-right.png);
+}
+
+.user .text {
+  background-color: var(--user-chat-background-color);
+  float: right;
+  margin-right: 0rem;
+  border-radius: 0.1rem 0 0.1rem 0.1rem;
+  max-width: 63%;
+  margin-top: 0.5rem;
+  font-family: Roboto-Regular;
+  color: #fff;
+  line-height: 0.3rem;
+  word-break: break-all;
+}
+
+.user .sanjiao {
+  float: right;
+  margin-right: 0;
+  margin-top: 0.5rem;
+  width: 0;
+  height: 0;
+  border-width: 0rem 0.1rem 0.1rem 0.06rem;
+  border-style: solid;
+  border-color: transparent transparent transparent
+    var(--user-chat-background-color);
+  /*透明 灰 透明 透明 */
+}
+
+/* 常见问题的ul */
+.chat .text > ul {
+  margin-top: 10px;
+}
+
+/* 常见问题的li */
+.chat .text .question {
+  cursor: pointer;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.1rem 0;
+  border-bottom: 1px solid #eaeaea;
+  font-family: Roboto-Regular;
+}
+
+.chat .text .question:nth-last-of-type(1) {
+  border-bottom: 0;
+}
+
+.chat .text .question img {
+  width: 0.08rem;
+}
+
+/* 系统消息 */
+.systemChat {
+  text-align: center;
+  background-color: #eff0f1;
+}
+
+.chat .systemText {
+  display: inline-block;
+  border-radius: 0.2rem;
+  background-color: #ddd;
+  color: #fff;
+  font-size: 0.3rem;
+  cursor: pointer;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
+/* 底部输入 */
+#mobile #chat_footer {
+  height: 2.5rem;
+  bottom: 0rem;
+  position: absolute;
+  overflow: hidden;
+  background: #f8f8f8;
+  width: 100%;
+}
+#mobile #chat_footer .btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.3rem;
+  margin-bottom: 0.1rem;
+}
+#mobile #chat_footer .btns .box {
+  font-size: 0.16rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #e4e4e4;
+  flex: 1;
+  padding: 0.1rem 0.15rem;
+  font-family: Roboto-Regular;
+  cursor: pointer;
+}
+#mobile #chat_footer .btns .box:nth-of-type(2) {
+  margin-left: 0.1rem;
+}
+#mobile #chat_footer .btns .box img {
+  width: 0.14rem;
+}
+#mobile #chat_footer #input_area {
+  height: 2rem;
+  background: var(--background-color);
+  border-top: 1px solid #e5e5e5;
+}
+/* 输入方式 */
+#chat_footer #shuruType {
+  width: 0.24rem;
+  height: 0.2rem;
+  background-repeat: round;
+  margin-left: 0.3rem;
+}
+
+/* 扩展输入项，小图标 */
+#mobile #chat_footer #input_area #inputExtend .extendSmallIcon {
+  padding-left: 0.15rem;
+  padding-top: 0.4rem;
+  /* 默认不显示 */
+  display: none;
+}
+
+#chat_footer #input_area #inputExtend .extendSmallIcon .smallIcon {
+  padding-left: 0.8rem;
+}
+
+#chat_footer #input_area #inputExtend .smallIcon > svg {
+  height: 0.15rem;
+  cursor: pointer;
+}
+
+#chat_footer #input_area #inputExtend .item {
+  width: 0.5rem;
+  float: left;
+  padding-top: 0.2rem;
+  padding-bottom: 0.5rem;
+}
+
+#chat_footer #input_area #inputExtend .item .iconButton {
+  text-align: center;
+  height: 0.25rem;
+}
+
+#chat_footer #input_area #inputExtend .item .iconButton > svg {
+  width: 0.23rem;
+}
+
+#chat_footer #input_area #inputExtend .item .iconName {
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+#chat_footer #icon {
+  background-image: url(../images/chat_yuyin.png);
+  background-repeat: no-repeat;
+  background-size: 1.875rem 1.875rem;
+  width: 3.44rem;
+  height: 100%;
+  background-position: center;
+  float: left;
+}
+
+#chat_footer #input_area {
+  background: var(--background-color);
+  width: 100%;
+  height: 100%;
+}
+
+#chat_footer #input_area #luyin {
+  width: 100%;
+  border: 1px solid #c6c7c8;
+  background-color: #feffff;
+  width: 100%;
+  height: 2.06rem;
+  border-radius: 0.1rem;
+  font-size: 1rem;
+}
+
+#chat_footer #input_area #textInput {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+
+#chat_footer #input_area #text {
+  background-color: #fff;
+  width: 100%;
+  word-break: break-all;
+  outline: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-user-modify: read-write-plaintext-only;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  resize: none;
+  height: 100%;
+  border: none;
+  font-family: Roboto-Regular;
+  font-size: 0.2rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0.3rem 0.45rem;
+}
+
+#chat_footer #input_area #text:focus-visible {
+  outline: none;
+}
+
+#chat_footer #input_area .send {
+  background-color: #67a497 !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 0.5rem;
+  color: white;
+  width: 1.63rem;
+  font-size: 0.17rem;
+  border-bottom: 3px solid #49a3db;
+  font-family: Roboto-Regular;
+  position: absolute;
+  right: 0.35rem;
+  bottom: 0.15rem;
+  cursor: pointer;
+}
+
+#inputExtend {
+  padding-left: 1.6rem;
+}
+
+#inputExtend span {
+  font-size: 0.8rem;
+  line-height: 2rem;
+  height: 1rem;
+  padding-right: 0.5rem;
+}
+
+/* inputExtend 输入扩展之表情 */
+#inputExtendShowArea #inputExtend_Face {
+  padding: 0.6rem;
+  text-align: left;
+}
+
+#inputExtendShowArea #inputExtend_Face span {
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+/* PC 端模式下的list */
+/* PC端模式下的chat */
+#pc {
+  width: 45rem;
+  border-radius: 0.2rem;
+  overflow: hidden;
+  margin-left: 25rem;
+  margin-top: 3rem;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e6e6e6;
+  background: url(/images/chat/pc_background.jpg);
+}
+
+/* 头部 */
+#pc #head {
+  height: 5rem;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: transparent;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#pc #head #back {
+  display: none;
+}
+
+#pc #head #title {
+  margin-top: 0.6rem;
+  margin-left: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 0rem;
+  height: 100%;
+}
+
+#pc #head #title #otherUserHead {
+  height: 3.7rem;
+  width: 3.7rem;
+  border-radius: 10rem;
+}
+
+#pc #head #title #headNameState {
+  padding-left: 0.8rem;
+  color: #444444;
+}
+
+#pc #head #title #headNameState #nickname {
+  font-size: 1rem;
+  height: 1rem;
+  color: #565878;
+}
+
+#pc #head #title #headNameState #onlineState {
+  font-size: 0.7rem;
+  padding-top: 0.3rem;
+  color: #565878;
+  text-align: left;
+}
+
+#pc #head #windowControl {
+  margin-right: 0.7rem;
+}
+
+/* 右上角的关闭按钮 */
+#pc #head #windowControl div svg {
+  width: 1rem;
+}
+
+.chat_header #windowControl > div {
+  cursor: pointer;
+}
+
+/* 新消息提醒的，隐藏 */
+#pc #newMessageRemind {
+  display: none;
+  width: 1px;
+  height: 0rem;
+}
+
+/* 消息对话框的 */
+#pc #chatcontent .user .text {
+  background-color: var(--user-chat-background-color);
+  text-align: left;
+  float: right;
+  margin-right: 0rem;
+}
+
+#pc #chatcontent .chat .text > img {
+  cursor: pointer;
+}
+
+#pc #chatcontent {
+  position: inherit;
+  height: 30rem;
+  padding-bottom: 3rem;
+  background-color: #eff0f1;
+  /* background-color: #ffffff9e; */
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#pc #chat_footer {
+  border-color: #e6e6e6;
+  border-top-style: solid;
+  border-top-width: 1px;
+  padding: 0px;
+}
+
+#pc #shuruType {
+  display: none;
+}
+
+#pc #chat_footer #input_area #inputExtend .item .iconName {
+  display: none;
+}
+
+#pc #chat_footer #input_area {
+  /* background: #ffffff9e; */
+}
+
+#pc #chat_footer #input_area #inputExtend {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 0rem;
+}
+
+#pc #chat_footer #input_area #inputExtend .item {
+  width: 2.8rem;
+}
+
+#pc #chat_footer #input_area #inputExtend .item .iconButton > svg {
+  width: 1.4rem;
+}
+
+#pc #chat_footer #input_area #text {
+  border-radius: 0.2rem;
+  border: 0rem;
+  margin-left: 0rem;
+  width: 100%;
+  height: 7rem;
+  text-align: left;
+}
+
+#pc #chat_footer #input_area #inputExtend .extendSmallIcon {
+  height: 1.4rem;
+  padding-top: 0.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#pc #inputExtend span {
+  line-height: 1rem;
+}
+
+/*底部按钮*/
+#pc #chat_footer #input_area #footerButton {
+  text-align: right;
+  padding-right: 0.4rem;
+  padding-bottom: 0.3rem;
+  /* background:#ffffffdb; */
+}
+
+#pc #chat_footer #input_area #footerButton .send {
+  border-radius: 0.2rem;
+  margin: 0rem;
+  cursor: pointer;
+  width: 6rem;
+  word-spacing: 0.3rem;
+}
+
+/*版权信息*/
+#pc #chat_footer #copyright {
+  display: inline;
+  color: #ddd;
+  font-size: 0.5rem;
+  width: 100rem;
+  text-align: center;
+  padding-right: 1rem;
+  display: none;
+}
+
+#quickButton {
+  bottom: 5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  white-space: nowrap;
+  overflow: scroll;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  background: var(--background-color);
+  display: inline;
+}
+
+#quickButton button {
+  border-radius: 2rem;
+  background: var(--background-color);
+  border-width: 1px;
+  border-style: solid;
+  border-color: pink;
+  padding: 0.1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-top: 0.2rem;
+}
+#head1 {
+  z-index: 999999999;
+}
+#dialog {
+  position: absolute;
+  background-color: #f8f8f8;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: none;
+  padding: 0 0rem 0.35rem 0rem;
+}
+#dialog .title1 {
+  font-size: 0.22rem;
+  color: #000;
+  text-align: center;
+  margin-top: 1.1rem;
+}
+#dialog .form {
+  margin-top: 0.4rem;
+  padding: 0 0.4rem;
+}
+#dialog .form .box1 {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.required-left {
+  position: absolute;
+  left: 0;
+  font-size: 0.14rem;
+  color: #b93838;
+  bottom: -0.2rem;
+  font-family: Roboto-Regular;
+}
+.required-right {
+  position: absolute;
+  right: 0.3rem;
+  font-size: 0.14rem;
+  color: #b93838;
+  font-family: Roboto-Regular;
+  bottom: -0.2rem;
+}
+#dialog .form .box1 input {
+  flex: none;
+  display: block;
+  height: 0.52rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  padding: 0 0.17rem;
+  color: #333;
+  font-size: 0.17rem;
+  width: 40.5%;
+  font-family: Roboto-Regular;
+}
+#dialog .form .box1 input:nth-of-type(2) {
+  margin-left: 0.1rem;
+}
+#dialog .form .box2 {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.3rem;
+}
+#country-chat {
+  position: absolute;
+  bottom: -2rem;
+  height: 2rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: #fff;
+  left: -0.01rem;
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  display: none;
+  z-index: 1;
+}
+#country-chat li {
+  font-size: 0.14rem;
+  padding: 0.1rem 0.1rem;
+  font-family: Roboto-Regular;
+  cursor: pointer;
+}
+#business-chat {
+  position: absolute;
+  bottom: -1.5rem;
+  height: 1.5rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: #fff;
+  left: -0.01rem;
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  display: none;
+  z-index: 1;
+}
+#business-chat li {
+  font-size: 0.14rem;
+  padding: 0.1rem 0.1rem;
+  font-family: Roboto-Regular;
+  cursor: pointer;
+}
+#dialog .form .box2 .left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  border: 1px solid #e5e5e5;
+  padding: 0 0.17rem;
+  border-radius: 3px;
+  background-color: #fff;
+  height: 0.52rem;
+  position: relative;
+}
+#dialog .form .box2 .left:nth-of-type(2) {
+  margin-left: 0.1rem;
+}
+#dialog .form .box2 .left input {
+  color: #333;
+  font-size: 0.17rem;
+  font-family: Roboto-Regular;
+  display: block;
+  width: 95%;
+}
+#dialog .form .box2 .left img {
+  width: 0.13rem;
+  display: block;
+}
+#dialog .form .box3 {
+  width: 100%;
+  margin-top: 0.3rem;
+  height: 0.52rem;
+  border-radius: 3px;
+  border: 1px solid #e5e5e5;
+  position: relative;
+}
+#dialog .form .box3 input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0 0.17rem;
+  color: #333;
+  font-size: 0.17rem;
+  font-family: Roboto-Regular;
+  border-radius: 3px;
+}
+#dialog .privacy {
+  display: flex;
+  align-items: center;
+  margin-top: 0.3rem;
+  padding: 0 0.4rem;
+  position: relative;
+}
+#dialog .privacy .box {
+  width: 0.29rem;
+  height: 0.29rem;
+  border: 1px solid #3e3e3e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+#first-name-req {
+  display: none;
+}
+#last-name-req {
+  display: none;
+}
+#country-req {
+  display: none;
+}
+#business-req {
+  display: none;
+}
+#email-req {
+  display: none;
+}
+#privacy-req {
+  display: none;
+  left: 0.4rem;
+}
+#dialog .privacy .box img {
+  width: 0.16rem;
+  display: none;
+}
+#dialog .privacy .text {
+  font-size: 0.17rem;
+  font-family: Roboto-Regular;
+  margin-left: 0.2rem;
+}
+#dialog .privacy .text span {
+  color: #4e9684;
+  cursor: pointer;
+  text-decoration: underline;
+}
+#dialog .description {
+  color: #a9a9a8;
+  font-size: 0.16rem;
+  margin-top: 0.46rem;
+  font-family: Roboto-Regular;
+  line-height: 0.23rem;
+  padding: 0 0.4rem;
+}
+#dialog .submit {
+  width: 1.6rem;
+  height: 0.5rem;
+  font-family: Roboto-Regular;
+  font-size: 0.17rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #67a497;
+  color: #fff;
+  float: right;
+  cursor: pointer;
+  margin-top: 0.3rem;
+  margin-right: 0.4rem;
+  border-bottom: 3px solid #40a0da;
+}
+@media (max-width: 768px) {
+  #dialog {
+    position: absolute;
+    background-color: #f8f8f8;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: none;
+    padding: 0 0rem 0.35rem 0rem;
+    overflow-y: scroll;
+  }
+  #dialog .title1 {
+    font-size: 0.42rem;
+    color: #000;
+    text-align: center;
+    margin-top: 2.1rem;
+  }
+  #dialog .form {
+    margin-top: 0.8rem;
+    padding: 0 0.6rem;
+  }
+  #dialog .form .box1 {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+  }
+  .required-left {
+    position: absolute;
+    left: 0;
+    font-size: 0.14rem;
+    color: #b93838;
+    bottom: 1rem;
+    font-family: Roboto-Regular;
+  }
+  .required-right {
+    position: absolute;
+    left: 0;
+    font-size: 0.14rem;
+    color: #b93838;
+    font-family: Roboto-Regular;
+    bottom: -0.3rem;
+  }
+  #dialog .form .box1 input {
+    display: block;
+    height: 0.8rem;
+    flex: none;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    padding: 0 0.17rem;
+    color: #333;
+    font-size: 0.26rem;
+    width: 94%;
+    font-family: Roboto-Regular;
+  }
+  #dialog .form .box1 input:nth-of-type(2) {
+    margin-left: 0rem;
+    margin-top: 0.5rem;
+  }
+  #dialog .form .box2 {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 0.5rem;
+  }
+  #country-chat {
+    position: absolute;
+    bottom: -3rem;
+    height: 3rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: #fff;
+    left: 0rem;
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    display: none;
+    z-index: 1;
+  }
+  #country-chat li {
+    font-size: 0.26rem;
+    padding: 0.15rem 0.15rem;
+    font-family: Roboto-Regular;
+    cursor: pointer;
+  }
+  #business-chat {
+    position: absolute;
+    bottom: -2rem;
+    height: 2rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: #fff;
+    left: -0.01rem;
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    display: none;
+    z-index: 1;
+  }
+  #business-chat li {
+    font-size: 0.26rem;
+    padding: 0.15rem 0.15rem;
+    font-family: Roboto-Regular;
+    cursor: pointer;
+  }
+  #dialog .form .box2 .left {
+    display: flex;
+    align-items: center;
+    flex: none;
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    padding: 0 0.17rem;
+    border-radius: 3px;
+    background-color: #fff;
+    height: 0.8rem;
+    position: relative;
+  }
+  #dialog .form .box2 .left:nth-of-type(2) {
+    margin-left: 0rem;
+    margin-top: 0.5rem;
+  }
+  #dialog .form .box2 .left input {
+    color: #333;
+    font-size: 0.26rem;
+    font-family: Roboto-Regular;
+    display: block;
+    width: 95%;
+  }
+  #dialog .form .box2 .left img {
+    width: 0.17rem;
+    display: block;
+  }
+  #dialog .form .box3 {
+    width: 100%;
+    margin-top: 0.5rem;
+    height: 0.8rem;
+    border-radius: 3px;
+    border: 1px solid #e5e5e5;
+    position: relative;
+  }
+  #dialog .form .box3 input {
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0 0.17rem;
+    color: #333;
+    font-size: 0.26rem;
+    font-family: Roboto-Regular;
+    border-radius: 3px;
+  }
+  #dialog .privacy {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    padding: 0 0.6rem;
+    position: relative;
+  }
+  #dialog .privacy .box {
+    width: 0.29rem;
+    height: 0.29rem;
+    border: 1px solid #3e3e3e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  #first-name-req {
+    display: none;
+  }
+  #last-name-req {
+    display: none;
+  }
+  #country-req {
+    display: none;
+    bottom: -0.4rem;
+  }
+  #business-req {
+    display: none;
+  }
+  #email-req {
+    display: none;
+  }
+  #privacy-req {
+    display: none;
+    left: 0.6rem;
+    bottom: -0.4rem;
+  }
+  #dialog .privacy .box img {
+    width: 0.16rem;
+    display: none;
+  }
+  #dialog .privacy .text {
+    font-size: 0.28rem;
+    font-family: Roboto-Regular;
+    margin-left: 0.2rem;
+  }
+  #dialog .privacy .text span {
+    color: #4e9684;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  #dialog .description {
+    color: #a9a9a8;
+    font-size: 0.28rem;
+    margin-top: 0.6rem;
+    font-family: Roboto-Regular;
+    line-height: 0.23rem;
+    padding: 0 0.6rem;
+  }
+  #dialog .submit {
+    width: 85%;
+    height: 1rem;
+    font-family: Roboto-Regular;
+    font-size: 0.28rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #67a497;
+    color: #fff;
+    float: none;
+    cursor: pointer;
+    border-bottom: 3px solid #40a0da;
+    margin: 0 auto;
+    margin-top: 1rem;
+  }
+  #chat {
+    position: fixed;
+    z-index: 4000;
+    right: 0.3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    bottom: 0.75rem;
+    opacity: 0;
+    cursor: pointer;
+  }
+  #chat img {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  #kefu {
+    position: fixed;
+    z-index: 400000;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    bottom: 0rem;
+    right: 0rem;
+    display: none;
+    border-radius: 0rem;
+  }
+  /* 头部 */
+  .chat_header {
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #f5fffd;
+    height: 0.84rem;
+    font-size: 0.14rem;
+    overflow: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    z-index: 99999;
+    padding: 0 0.3rem;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    border-radius: 0;
+  }
+  .chat_header .title {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .chat_header .title nickname,
+  .chat_header .title #nickname {
+    color: #f5fffd;
+    font-size: 0.14rem;
+    width: 1.4rem;
+    display: block;
+  }
+  .chat_header .title img {
+    display: block;
+    width: 0.2rem;
+    cursor: pointer;
+  }
+  /*  聊天列表， list.html  */
+  #chatlist .item {
+    width: 100%;
+    overflow: hidden;
+    border-bottom-color: #e6e6e6;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: #494949;
+  }
+  #chatlist .item .head {
+    float: left;
+    background-image: url(../images/head.png);
+    background-repeat: round;
+    width: 3.2rem;
+    margin-top: 0.3rem;
+    height: 3.2rem;
+    border-radius: 2rem;
+    margin-right: 1rem;
+  }
+  #chatlist .item .nickname {
+    font-size: 1rem;
+    font-weight: bold;
+    padding-top: 0.35rem;
+  }
+  #chatlist .item .time {
+    float: right;
+    font-weight: normal;
+    font-size: 0.8rem;
+    padding-top: 0.1rem;
+  }
+  #chatlist .item .num {
+    float: right;
+    margin-top: 0.5rem;
+    margin-right: 0.3rem;
+  }
+  /* 未读消息的点 */
+  #chatlist .item .num > div {
+    background: #f00;
+    border-radius: 3rem;
+    width: 0.65rem;
+    height: 0.65rem;
+  }
+  #chatlist .item .text {
+    width: 10rem;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 1.1rem;
+  }
+  /* 没有聊天记录 */
+  #chatlist .not_hostory_list {
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    color: gray;
+  }
+  /* 在线聊天沟通，chat.html */
+  #mobile .chat_header {
+    position: absolute;
+    overflow: hidden;
+  }
+  #mobile .chat_header .title #onlineState {
+    font-size: 0.6rem;
+    margin-left: 0.3rem;
+  }
+  /* 新消息提醒 */
+  #mobile #newMessageRemind {
+    position: absolute;
+    margin-top: 2.7rem;
+    z-index: 999999;
+    font-size: 0.8rem;
+    padding-left: 1rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    background: var(--background-color);
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: none;
+  }
+  #mobile #newMessageRemind #newMessageRemindText {
+    display: inline;
+    float: left;
+    width: 85%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  #mobile #newMessageRemind #newMessageRemindClose {
+    float: right;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  #chatcontent {
+    background-color: #f8f8f8;
+    font-size: 0.18rem;
+    height: 100%;
+    overflow: scroll;
+    max-height: 100%;
+    padding-top: 0.55rem;
+    position: absolute;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-bottom: 2.5rem;
+  }
+  .chats:last-child {
+    margin-bottom: 14rem;
+  }
+  .chat {
+    padding-left: 0.3rem;
+    padding-top: 0.2rem;
+    overflow: auto;
+    background-color: #f8f8f8;
+  }
+  .chat .head {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 0.42rem;
+    margin-top: 0.56rem;
+    height: 0.42rem;
+    border-radius: 50%;
+  }
+  .chat .text {
+    background-color: #feffff;
+    color: #333;
+    max-width: 100%;
+    margin-left: 0.8rem;
+    border-radius: 0 0.1rem 0.1rem 0.1rem;
+    font-size: 0.19rem;
+    padding: 0.13rem 0.2rem;
+    margin-top: 0.7rem;
+    margin-right: 0.3rem;
+    text-align: left;
+    line-height: 0.39rem;
+    font-family: Roboto-Regular;
+    font-size: 0.27rem;
+  }
+  .AUTO_REPLY .text {
+    font-family: Roboto-Black;
+  }
+  /* 沟通的对方，聊天左侧一方 */
+  .otherUser .head {
+    float: left;
+    width: 0.6rem;
+    height: 0.6rem;
+    background-image: url(/images/chat/avatar-left.png) !important;
+  }
+  .otherUser .sanjiao {
+    float: left;
+    margin-left: 0.1rem;
+    margin-top: 0.7rem;
+    width: 0;
+    height: 0;
+    border-width: 0rem 0.1rem 0.1rem 0;
+    border-style: solid;
+    border-color: transparent var(--otherUser-chat-background-color) transparent
+      transparent;
+    /*透明 灰 透明 透明 */
+  }
+  /* 自己，聊天右侧的一方 */
+  .user .head {
+    float: right;
+    margin-right: 0.3rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    background-image: url(/images/chat/avatar-right.png);
+  }
+  .user .text {
+    background-color: var(--user-chat-background-color);
+    float: right;
+    margin-right: 0rem;
+    border-radius: 0.1rem 0 0.1rem 0.1rem;
+    max-width: 63%;
+    margin-top: 0.6rem;
+    font-family: Roboto-Regular;
+    color: #fff;
+    word-wrap: break-word;
+    word-break: normal;
+    line-height: 0.3rem;
+  }
+  .user .sanjiao {
+    float: right;
+    margin-right: 0;
+    margin-top: 0.6rem;
+    width: 0;
+    height: 0;
+    border-width: 0rem 0.1rem 0.1rem 0.06rem;
+    border-style: solid;
+    border-color: transparent transparent transparent
+      var(--user-chat-background-color);
+    /*透明 灰 透明 透明 */
+  }
+  /* 常见问题的ul */
+  .chat .text > ul {
+    margin-top: 10px;
+  }
+  /* 常见问题的li */
+  .chat .text .question {
+    cursor: pointer;
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0.2rem 0;
+    border-bottom: 1px solid #eaeaea;
+    font-family: Roboto-Regular;
+  }
+  .chat .text .question:nth-last-of-type(1) {
+    border-bottom: 0;
+  }
+  .chat .text .question img {
+    width: 0.08rem;
+  }
+  /* 系统消息 */
+  .systemChat {
+    text-align: center;
+    background-color: #eff0f1;
+  }
+  .chat .systemText {
+    display: inline-block;
+    border-radius: 0.2rem;
+    background-color: #ddd;
+    color: #fff;
+    font-size: 0.3rem;
+    cursor: pointer;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+  }
+  /* 底部输入 */
+  #mobile #chat_footer {
+    height: 1.7rem;
+    background: #f8f8f8;
+    bottom: 0rem;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    border-top: none;
+    padding: 0 0.3rem;
+  }
+  #mobile #chat_footer .btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0rem;
+    margin-bottom: 0.12rem;
+  }
+  #mobile #chat_footer .btns .box {
+    font-size: 0.16rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #e4e4e4;
+    flex: 1;
+    padding: 0.15rem 0.15rem;
+    font-family: Roboto-Regular;
+    cursor: pointer;
+  }
+  #mobile #chat_footer .btns .box:nth-of-type(2) {
+    margin-left: 0.1rem;
+  }
+  #mobile #chat_footer .btns .box img {
+    width: 0.14rem;
+  }
+  /* 输入方式 */
+  #chat_footer #shuruType {
+    width: 0.24rem;
+    height: 0.2rem;
+    background-repeat: round;
+    margin-left: 0.3rem;
+  }
+  /* 扩展输入项，小图标 */
+  #mobile #chat_footer #input_area #inputExtend .extendSmallIcon {
+    padding-left: 0.15rem;
+    padding-top: 0.4rem;
+    /* 默认不显示 */
+    display: none;
+  }
+  #chat_footer #input_area #inputExtend .extendSmallIcon .smallIcon {
+    padding-left: 0.8rem;
+  }
+  #chat_footer #input_area #inputExtend .smallIcon > svg {
+    height: 0.15rem;
+    cursor: pointer;
+  }
+  #chat_footer #input_area #inputExtend .item {
+    width: 0.5rem;
+    float: left;
+    padding-top: 0.2rem;
+    padding-bottom: 0.5rem;
+  }
+  #chat_footer #input_area #inputExtend .item .iconButton {
+    text-align: center;
+    height: 0.25rem;
+  }
+  #chat_footer #input_area #inputExtend .item .iconButton > svg {
+    width: 0.23rem;
+  }
+  #chat_footer #input_area #inputExtend .item .iconName {
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  #chat_footer #icon {
+    background-image: url(../images/chat_yuyin.png);
+    background-repeat: no-repeat;
+    background-size: 1.875rem 1.875rem;
+    width: 3.44rem;
+    height: 100%;
+    background-position: center;
+    float: left;
+  }
+  #chat_footer #input_area {
+    background: #f8f8f8 !important;
+    width: 100%;
+    height: 100%;
+    border-top: none !important;
+  }
+  #chat_footer #input_area #luyin {
+    width: 100%;
+    border: 1px solid #c6c7c8;
+    background-color: #feffff;
+    width: 100%;
+    height: 2.06rem;
+    border-radius: 0.1rem;
+    font-size: 1rem;
+  }
+  #chat_footer #input_area #textInput {
+    height: 0.8rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+  }
+  #chat_footer #input_area #text {
+    background-color: #fff;
+    width: calc(100% - 2rem);
+    word-break: break-all;
+    outline: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-user-modify: read-write-plaintext-only;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    resize: none;
+    height: 100%;
+    border: none;
+    font-family: Roboto-Regular;
+    font-size: 0.27rem;
+    color: #333;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0.25rem 0.4rem;
+  }
+  #chat_footer #input_area #text:focus-visible {
+    outline: none;
+  }
+  #chat_footer #input_area .send {
+    background-color: #67a497 !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 0.81rem;
+    color: white;
+    width: 1.63rem;
+    font-size: 0.27rem;
+    border-bottom: none;
+    font-family: Roboto-Regular;
+    position: absolute;
+    right: 0;
+    width: 2rem;
+    bottom: 0;
+    cursor: pointer;
+  }
+  #inputExtend {
+    padding-left: 1.6rem;
+  }
+  #inputExtend span {
+    font-size: 0.8rem;
+    line-height: 2rem;
+    height: 1rem;
+    padding-right: 0.5rem;
+  }
+  /* inputExtend 输入扩展之表情 */
+  #inputExtendShowArea #inputExtend_Face {
+    padding: 0.6rem;
+    text-align: left;
+  }
+  #inputExtendShowArea #inputExtend_Face span {
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
+  /* PC 端模式下的list */
+  /* PC端模式下的chat */
+  #pc {
+    width: 45rem;
+    border-radius: 0.2rem;
+    overflow: hidden;
+    margin-left: 25rem;
+    margin-top: 3rem;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e6e6e6;
+    background: url(/images/chat/pc_background.jpg);
+  }
+  /* 头部 */
+  #pc #head {
+    height: 5rem;
+    text-align: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: transparent;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  #pc #head #back {
+    display: none;
+  }
+  #pc #head #title {
+    margin-top: 0.6rem;
+    margin-left: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 0rem;
+    height: 100%;
+  }
+  #pc #head #title #otherUserHead {
+    height: 3.7rem;
+    width: 3.7rem;
+    border-radius: 10rem;
+  }
+  #pc #head #title #headNameState {
+    padding-left: 0.8rem;
+    color: #444444;
+  }
+  #pc #head #title #headNameState #nickname {
+    font-size: 1rem;
+    height: 1rem;
+    color: #565878;
+  }
+  #pc #head #title #headNameState #onlineState {
+    font-size: 0.7rem;
+    padding-top: 0.3rem;
+    color: #565878;
+    text-align: left;
+  }
+  #pc #head #windowControl {
+    margin-right: 0.7rem;
+  }
+  /* 右上角的关闭按钮 */
+  #pc #head #windowControl div svg {
+    width: 1rem;
+  }
+  .chat_header #windowControl > div {
+    cursor: pointer;
+  }
+  /* 新消息提醒的，隐藏 */
+  #pc #newMessageRemind {
+    display: none;
+    width: 1px;
+    height: 0rem;
+  }
+  /* 消息对话框的 */
+  #pc #chatcontent .user .text {
+    background-color: var(--user-chat-background-color);
+    text-align: left;
+    float: right;
+    margin-right: 0rem;
+  }
+  #pc #chatcontent .chat .text > img {
+    cursor: pointer;
+  }
+  #pc #chatcontent {
+    position: inherit;
+    height: 30rem;
+    padding-bottom: 3rem;
+    background-color: #eff0f1;
+    /* background-color: #ffffff9e; */
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  #pc #chat_footer {
+    border-color: #e6e6e6;
+    border-top-style: solid;
+    border-top-width: 1px;
+    padding: 0px;
+  }
+  #pc #shuruType {
+    display: none;
+  }
+  #pc #chat_footer #input_area #inputExtend .item .iconName {
+    display: none;
+  }
+  #pc #chat_footer #input_area {
+    /* background: #ffffff9e; */
+  }
+  #pc #chat_footer #input_area #inputExtend {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 0rem;
+  }
+  #pc #chat_footer #input_area #inputExtend .item {
+    width: 2.8rem;
+  }
+  #pc #chat_footer #input_area #inputExtend .item .iconButton > svg {
+    width: 1.4rem;
+  }
+  #pc #chat_footer #input_area #text {
+    border-radius: 0.2rem;
+    border: 0rem;
+    margin-left: 0rem;
+    width: 100%;
+    height: 7rem;
+    text-align: left;
+  }
+  #pc #chat_footer #input_area #inputExtend .extendSmallIcon {
+    height: 1.4rem;
+    padding-top: 0.2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #pc #inputExtend span {
+    line-height: 1rem;
+  }
+  /*底部按钮*/
+  #pc #chat_footer #input_area #footerButton {
+    text-align: right;
+    padding-right: 0.4rem;
+    padding-bottom: 0.3rem;
+    /* background:#ffffffdb; */
+  }
+  #pc #chat_footer #input_area #footerButton .send {
+    border-radius: 0.2rem;
+    margin: 0rem;
+    cursor: pointer;
+    width: 6rem;
+    word-spacing: 0.3rem;
+  }
+  /*版权信息*/
+  #pc #chat_footer #copyright {
+    display: inline;
+    color: #ddd;
+    font-size: 0.5rem;
+    width: 100rem;
+    text-align: center;
+    padding-right: 1rem;
+    display: none;
+  }
+  #quickButton {
+    bottom: 5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    white-space: nowrap;
+    overflow: scroll;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    background: var(--background-color);
+    display: inline;
+  }
+  #quickButton button {
+    border-radius: 2rem;
+    background: var(--background-color);
+    border-width: 1px;
+    border-style: solid;
+    border-color: pink;
+    padding: 0.1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-top: 0.2rem;
+  }
+}
+/*# sourceMappingURL=chat.css.map */

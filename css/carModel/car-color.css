@@ -1,0 +1,398 @@
+.car-pc-color {
+  height: 9.05rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 1.2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.car-pc-color .left {
+  padding-top: 1rem;
+}
+
+.car-pc-color .left .top .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 0.15rem;
+}
+
+.car-pc-color .left .top .box .box-left .title {
+  color:#484848;
+  font-size: 0.20rem;
+  margin-bottom: 0.12rem;
+}
+
+.car-pc-color .left .top .box .box-left .line {
+  width: 3.14rem;
+  height: 0.04rem;
+  background-color: #d2d2d2;
+  position: relative;
+}
+
+.car-pc-color .left .top .box .box-left .line .active-line {
+  position: absolute;
+  height: 100%;
+  width: 0;
+  left: 0;
+  top: 0;
+  background-color: #ff874a;
+}
+
+.car-pc-color .left .top .box .counter {
+  color: #484848;
+  font-size: 0.26rem;
+  margin-left: 0.3rem;
+  margin-top: 0.3rem;
+  text-align: left;
+}
+
+.car-pc-color .left .center {
+  width: 2rem;
+  height: 0.43rem;
+  border: 1px solid #000;
+  font-size: 0.16rem;
+  color: #484848;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-transition: all 0.45s;
+  transition: all 0.45s;
+  margin-top: 0.62rem;
+}
+.car-pc-color .left .center a{
+  color: #484848;
+  transition: all 0.45s;
+}
+.car-pc-color .left .center:hover {
+  color: #fff;
+  border-color: #ff874a;
+}
+.car-pc-color .left .center:hover a{
+  color: #fff;
+}
+
+.car-pc-color .left .bottom {
+  margin-top: 1.5rem;
+}
+
+.car-pc-color .left .bottom .title {
+  color: #484848;
+  font-size: 0.20rem;
+}
+
+.car-pc-color .left .bottom ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 0.38rem;
+}
+
+.car-pc-color .left .bottom ul li {
+  width: 0.65rem;
+  height: 0.65rem;
+  margin-right: 0.3rem;
+  padding: 0.1rem;
+  cursor: pointer;
+}
+
+.car-pc-color .left .bottom ul li img {
+  width: 100%;
+  height: 100%;
+}
+
+.car-pc-color .left .bottom ul .active-li {
+  border: 1px solid #d3d3d3;
+}
+
+.car-pc-color .right {
+  width: 5.32rem;
+  border-radius: 0.31rem 0.31rem 0px 0px;
+  height: 90%;
+  position: absolute;
+  bottom: 0;
+  right: 2.14rem;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.car-pc-color .right .car-name {
+  position: absolute;
+  color: #fff;
+  font-size: 1.1rem;
+  top: 0.9rem;
+  right: 0.73rem;
+}
+
+.car-pc-color .right .car-description {
+  color: #fff;
+  -webkit-writing-mode: tb-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: tb-rl;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  top: 1.1rem;
+  right: 0.24rem;
+  font-size: 0.20rem;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+.car-pc-color .right .lines {
+  width: 0.02rem;
+  height: 4.34rem;
+  background-color: #fff;
+  position: absolute;
+  right: 0.32rem;
+  bottom: 1rem;
+}
+
+.car-pc-color .right .car-img {
+  position: absolute;
+  top: 32%;
+  right: -0.6rem;
+  width: 10rem;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.car-pc-color .right .car-img img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  display: block;
+  position: absolute;
+}
+
+.car-mb-color {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 1.7rem;
+}
+
+.car-mb-color .left {
+  padding-top: 1.05rem;
+}
+
+.car-mb-color .left .top {
+  padding-left: 0.69rem;
+}
+
+.car-mb-color .left .top .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 0.15rem;
+}
+
+.car-mb-color .left .top .box .box-left .title {
+  color:#484848;
+  font-size: 0.26rem;
+  margin-bottom: 0.11rem;
+}
+
+.car-mb-color .left .top .box .box-left .line {
+  width: 3.14rem;
+  height: 0.04rem;
+  background-color: #d2d2d2;
+  position: relative;
+}
+
+.car-mb-color .left .top .box .box-left .line .active-line {
+  position: absolute;
+  height: 100%;
+  width: 0;
+  left: 0;
+  top: 0;
+  background-color: #ff874a;
+}
+
+.car-mb-color .left .top .box .counter {
+  color:#484848;
+  font-size: 0.35rem;
+  margin-left: 0.28rem;
+  margin-top: 0.38rem;
+  text-align: left;
+}
+
+.car-mb-color .left .center {
+  width: 3.27rem;
+  height: 0.7rem;
+  border: 1px solid #484848;
+  font-size: 0.26rem;
+  margin-left: 0.7rem;
+  color:#484848;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-transition: all 0.45s;
+  transition: all 0.45s;
+  margin-top: 0.37rem;
+}
+.car-mb-color .left .center a{
+  color:#484848;
+  transition: all .45s;
+}
+.car-mb-color .left .center:hover {
+  color: #fff;
+  border-color: #ff874a;
+}
+.car-mb-color .left .center:hover a{
+  color: #fff;
+}
+
+.car-mb-color .right-box {
+  position: relative;
+}
+
+.car-mb-color .right-box .right {
+  width: 100%;
+  height: 3.94rem;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-clip-path: polygon(0 0, 0% 100%, 100% 90%);
+  clip-path: polygon(0 0, 0% 100%, 100% 90%);
+  margin-top: 0.5rem;
+}
+
+.car-mb-color .right-box .right .car-description {
+  color: #fff;
+  -webkit-writing-mode: tb-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: tb-rl;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  top: 1.1rem;
+  right: 0.24rem;
+  font-size: 0.18rem;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+.car-mb-color .right-box .right .lines {
+  width: 0.02rem;
+  height: 4.34rem;
+  background-color: #fff;
+  position: absolute;
+  right: 0.32rem;
+  bottom: 1rem;
+}
+
+.car-mb-color .right-box .car-name {
+  position: absolute;
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 2.3rem;
+  top: -0.4rem;
+  right: -0.45rem;
+  z-index: -1;
+}
+
+.car-mb-color .right-box .car-img {
+  position: absolute;
+  bottom: 0;
+  right: -2.2rem;
+  width: 9rem;
+  height: 3.8rem;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  top: 0.8rem;
+}
+
+.car-mb-color .right-box .car-img img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  display: block;
+  position: absolute;
+}
+
+.car-mb-color .carModel-color-bottom {
+  margin-top: 1.5rem;
+}
+
+.car-mb-color .carModel-color-bottom .title {
+  color:#484848;
+  font-size: 0.12rem;
+}
+
+.car-mb-color .carModel-color-bottom ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.car-mb-color .carModel-color-bottom ul li {
+  width: 0.63rem;
+  height: 0.63rem;
+  margin-right: 0.33rem;
+  padding: 0.1rem;
+  cursor: pointer;
+  position: relative;
+}
+.car-mb-color .carModel-color-bottom ul li div {
+  font-size: 0.28rem;
+  color: #333;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+}
+.car-mb-color .carModel-color-bottom ul li img {
+  width: 100%;
+  height: 100%;
+}
+
+.car-mb-color .carModel-color-bottom ul .active-li {
+  border: 1px solid #d3d3d3;
+}
+/*# sourceMappingURL=car-color.css.map */

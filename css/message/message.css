@@ -1,0 +1,59 @@
+#global-message {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2147483647;
+}
+
+#global-message .message {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2147483647;
+  width: 40%;
+  color: #628788;
+  background-color: #fff;
+  font-size: 0.32rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.5rem;
+  border-radius: 0.1rem;
+  letter-spacing: 0.03rem;
+}
+
+@media (max-width: 768px) {
+  #global-message {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2147483647;
+  }
+
+  #global-message .message {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2147483647;
+    width: 90%;
+    color: #628788;
+    background-color: #fff;
+    font-size: 0.28rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.5rem;
+    border-radius: 0.1rem;
+    letter-spacing: 0.03rem;
+  }
+}

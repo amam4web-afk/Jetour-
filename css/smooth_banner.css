@@ -1,0 +1,29 @@
+main{padding-top: 0;}
+.smooth—banner {width: 100%; overflow-x: hidden;  font-size: 0.2rem; }
+.smooth—banner .title{color:#ff8c00; font-size: 0.7rem; }
+.smooth—banner .w{color: #ffffff; line-height: 0.36rem;/* text-align: justify; */}
+.smooth—banner{ width: 100%; height: 100vh; position: relative; overflow: hidden;}
+.smooth—banner .bg{width: 100%; height: 120%; position: absolute; top: 0;  left: 0;}
+.smooth—banner .building{width: 100%; position: absolute; bottom: 0; right: 0;}
+.smooth—banner .building img{width: 100%;}
+.smooth—banner .bg img{width: 100%;}
+.smooth—banner .word{position: absolute; top: 1.88rem; left:1rem ; width: 34%;}
+.smooth—banner .logo_s{     width: 2.49rem; margin-left: 0.03rem;}
+.smooth—banner .w{ padding: 0.34rem 0; border-top: #fff 1px solid;}
+#contact .smooth—banner .word{width:30% ;}
+.business .smooth—banner .word{width:38% ;}
+
+@media (max-width: 1012px)
+{
+    .smooth—banner{font-size: 0.28rem;}
+	.smooth—banner .profile .word ,#contact .smooth—banner .word{width: 93%; left: 0.28rem; top: 1.5rem;}
+	.smooth—banner .w{line-height: 0.5rem;}
+	.smooth—banner{height:100vh;}
+	.smooth—banner .mb-only{width:100%; height:120vh;  object-fit: cover;} 
+	.smooth—banner .word{ flex-wrap: wrap;}
+	.smooth—banner .word >div{width: 100%;}
+	.smooth—banner .word .w{width: 100%; font-size: 0.28rem;}
+	.smooth—banner .word{width: 93%; left: 0.28rem;  top:1.5rem;}
+	.smooth—banner .v{width: 100%; height:50%; bottom:0; border-radius: 0; }
+	.smooth—banner .v video{width: 100vw; height: 100%;}
+}

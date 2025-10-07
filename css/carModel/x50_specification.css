@@ -1,0 +1,62 @@
+/* .X50 {width: 100%; overflow-x:hidden;} */
+body{width: 100vw; overflow-x:hidden;}
+.X50{width: 100%;}
+.x50_specification .title{ height: 1.82rem; display: flex; justify-content: center; align-items: center; width: 16rem; margin: 0 auto; position: relative;}
+.x50_specification .title img{ width: 5.44rem; margin-right: 0.16rem;}
+.x50_specification span{ font-size: 0.4rem; color: #4d4c4c;}
+.x50_specification .container{width: 16rem; margin: 0 auto;}
+.x50_specification .container .annotation{font-size: 0.16rem; line-height: 0.48rem; margin-bottom: 0.14rem;}
+.x50_specification .form{font-size: 0.16rem; display: flex; border-bottom: #e2e2e4 1px solid; margin-bottom: 0.2rem;}
+.x50_specification .powertrain{width: 5.75rem;}
+.x50_specification .form .t{ height: 0.7rem; width: 100%; line-height: 0.7rem; background-color:#39aeb2; color: #fff; text-align: center; position: sticky; top: 0;display: flex; align-items: center; justify-content: center; font-weight: bold; z-index: 10;}
+.x50_specification .powertrain dt{justify-content: center;}
+.x50_specification .powertrain .btn{display: none;}
+.x50_specification .form dt{height: 0.6rem; width: 100%; background-color:#e2e2e4; text-align: center; display: flex; align-items: center; font-weight: bold; border-bottom: #fff 1px solid;}
+.x50_specification .form dt .btn{}
+.x50_specification .form dd{display: flex; overflow-y: hidden; }
+.x50_specification .form dd ul{width: 100%;}
+
+.x50_specification .form dd li{ min-height: 0.5rem; border-bottom: #e2e2e4 1px solid; border-right: #e2e2e4 1px solid; padding-left: 0.42rem; display: flex; align-items: center; padding-top: 0.1rem; padding-bottom: 0.1rem;}
+.x50_specification .form dd ul li:last-child{border-bottom: none; }
+.x50_specification .form .t>div{ width: 100%;  display: flex;  align-items: center; justify-content: center; height: 100%;  line-height: 0.26rem;}
+.x50_specification .motorcycleType{width: 10.28rem; }
+/* position: relative; */
+.x50_specification .form .motorcycleType dt{display: flex; justify-content: flex-end; align-items: center;}
+.x50_specification .form .motorcycleType dt span{ margin-right: 0.2rem; cursor: pointer;}
+.x50_specification .form .motorcycleType dt .open{display: none;}
+
+.x50_specification .form .motorcycleType dd li{padding-left: 0; display: flex; justify-content: center;}
+
+.x50_specification .form .motorcycleType dd ul:last-child li{border-right: none;}
+
+
+.title .btn { width: 2rem; height: 0.43rem; background-color: #fff;border-radius: 2px; display: flex; align-items: center;justify-content: center; color: #484848; font-size: 0.14rem; cursor: pointer;}
+.whiteOrange_btn{  width: 2rem; height: 0.43rem; border: 1px solid #000; font-size: 0.16rem; color: #484848; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center;  -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; cursor: pointer; overflow: hidden; background-color: #fff; -webkit-transition: all 0.45s; transition: all 0.45s;}
+.whiteOrange_btn:hover { color: #fff; border-color: #ff874a;}
+
+.x50_specification .whiteOrange_btn{position: absolute; right: 0; }
+/* .x50_specification .motorcycleType .t{position: relative;} */
+.x50_specification .motorcycleType .l_b{position: absolute;  left: 0; top: 50%; transform: translateY(-50%); content: ''; display: block; width: 0; height: 0;border-style: solid;border-width: 12px;	border-color: transparent white transparent  transparent;}
+.x50_specification .motorcycleType .r_b{position: absolute;  right: 0; top: 50%; transform: translateY(-50%); content: ''; display: block; width: 0; height: 0;border-style: solid;border-width: 12px;	border-color: transparent transparent  transparent white;}
+.motorcycleType_box{width: auto;}
+@media (max-width: 1012px)
+{
+    .x50_specification .form{overflow-x: auto;}
+    .x50_specification .title{width: 90%; padding-top: 1.6rem; flex-wrap: wrap; margin-bottom: 0.1rem; height: 2.6rem;}
+    .x50_specification .whiteOrange_btn{position: absolute; top: 0.3rem; right: 0; width: 3.28rem; height: 0.7rem; font-size: 0.26rem; }
+    .x50_specification .container{width: 98%; margin-left: 2%; position: relative; }
+    .x50_specification .powertrain{width: 3.8rem; position: sticky;left: 0; background-color: #fff;z-index: 10; flex: 2; z-index: 11;}
+    .x50_specification .powertrain .btn{display: block; position: absolute; top: 0; right: -3.5rem; line-height: 0.78rem; pointer-events: none;}
+    .x50_specification .form dt .btn{line-height: 1.2rem; pointer-events: none;}
+    .x50_specification .form .powertrain dt span{ margin-right: 0.2rem; cursor: pointer;}
+    .x50_specification .form .powertrain dt .open{display: none;}
+    .x50_specification .powertrain dt{position: relative;}
+    .x50_specification .motorcycleType{ width: auto;}
+    .x50_specification .motorcycleType .btn{display: none;}
+    .x50_specification .form .t{height: 0.9rem; line-height: 0.9rem; font-size: 0.26rem; width: auto; }
+    .x50_specification .form dt{ height: 1.2rem;  font-size: 0.26rem;}
+    .x50_specification .form dd li{ line-height: 0.32rem; font-size: 0.26rem; padding-left:0.2rem; min-height: 1rem; padding-top: 0.2rem; padding-bottom: 0.2rem;}
+    .x50_specification .form .t>div{display: flex; justify-content: center; align-items: center; line-height:0.4rem; width: 50vw;}
+    .motorcycleType_box{width: 3.52rem; overflow-x: scroll;}
+    .x50_specification .container .annotation{font-size: 0.26rem; line-height: 0.48rem; margin-bottom: 0.14rem;}
+}

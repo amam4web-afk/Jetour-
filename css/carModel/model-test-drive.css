@@ -1,0 +1,319 @@
+    #anchor-pc-point {
+        z-index: 1700;
+    }
+
+    .model-test-drive {
+        width: 100%;
+        height: 1rem;
+        background-color: #ffffff;
+        box-shadow: 0px -1px 0px 0px #f0f0f0;
+        border: solid 1px #f0f0f0;
+        border-top: 0;
+        position: fixed;
+        z-index: 1800;
+        bottom: 0;
+        left: 0;
+        padding: 0 0.63rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.1rem;
+    }
+
+    .box-drive {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    .box-drive .password_icon{position: absolute; top: 50%; transform: translateY(-50%); right: 0.1rem; width: 0.34rem; height: 0.34rem; display: flex; align-items: center;}
+    .box-drive .password_icon img{width: 0.24rem; height: 0.12rem; }
+    .box-drive .password_icon .on{display: none;}
+    .box-drive .password_icon.on .on{display: block;}
+    .box-drive .password_icon.on .off{display: none;}
+    .box-drive input {
+        height: 0.44rem;
+        background-color: #ebecec;
+        border-radius: 2px;
+        border: solid 1px #ebecec;
+        width: 100%;
+        outline: none;
+        padding: 0 0.15rem;
+        font-size: 0.18rem;
+    }
+
+    .box-drive input[type="text"]:focus,
+    .box-drive input[type="password"]:focus {
+        background-color: #fff;
+        border: solid 1px #111111;
+    }
+
+    .box-drive .agree-box {
+        width: 0.2rem;
+        height: 0.2rem;
+        border-radius: 2px;
+        border: 1px solid #111;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .box-drive .agree-box img {
+        display: none;
+        width: 0.14rem;
+    }
+
+    .box-drive .arrow {
+        position: absolute;
+        width: 0.14rem;
+        right: 0.14rem;
+    }
+
+    .box-drive .privacy-box {
+        color: #999;
+        font-size: 0.18rem;
+        margin-left: 0.15rem;
+    }
+
+    .box-drive .privacy-box a {
+        color: #67998c;
+        /* font-size: 0.12rem; */
+        text-decoration: underline;
+    }
+
+    .box-drive #country {
+        cursor: pointer;
+    }
+
+    .box-drive #countrySelect {
+        max-height: 2rem;
+        display: none;
+        background-color: #fff;
+        position: absolute;
+        left: 0;
+        top: -2rem;
+        overflow-x: hidden;
+        overflow-y: auto;
+        border: 1px solid #eee;
+    }
+
+    .box-drive #countrySelect li {
+        font-size: 0.14rem;
+        color: #333;
+        height: 0.4rem;
+        padding-left: 0.35rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        transition: all 1s;
+    }
+
+    .box-drive #countrySelect li:hover {
+        background-color: #e9ebec;
+    }
+
+    .agree {
+        width: 20vw;
+        flex: none;
+        justify-content: center;
+    }
+
+    .btn {
+        width: 2rem;
+        height: 0.43rem;
+        background-color: #2c2e2e;
+        border-radius: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 0.14rem;
+        cursor: pointer;
+    }
+
+    .drive-btn {
+        display: none;
+    }
+
+    .model-test-drive .close {
+        display: none;
+    }
+    html[dir="rtl"] .box-drive .password_icon{
+        left:.1rem;
+        right: auto;
+    }
+    html[dir="rtl"] .box-drive .arrow{
+        left:0.14rem;
+        right: auto;
+    }
+    @media (max-width: 1012px) {
+        .model-test-drive {
+            width: 100%;
+            height: auto;
+            background-color: #ffffff;
+            box-shadow: 0px -1px 41px 0px #e4e4e4;
+            border: solid 1px #f0f0f0;
+            border-top: 0;
+            position: fixed;
+            z-index: 10000;
+            bottom: 0;
+            left: 0;
+            padding: 0.76rem 0.63rem;
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            gap: 0.37rem;
+        }
+
+        .box-drive {
+            flex: 1;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .box-drive input {
+            height: 0.93rem;
+            background-color: #ebecec;
+            border-radius: 2px;
+            border: solid 1px #ebecec;
+            width: 100%;
+            outline: none;
+            padding: 0 0.3rem;
+            font-size: 0.27rem;
+        }
+
+        .box-drive input[type="text"]:focus,
+        .box-drive input[type="password"]:focus {
+            background-color: #fff;
+            border: solid 1px #111111;
+        }
+
+        .box-drive .agree-box {
+            width: 0.34rem;
+            height: 0.34rem;
+            border-radius: 0px;
+            border: 1px solid #111;
+            margin-left: 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box-drive .agree-box img {
+            display: none;
+            width: 0.25rem;
+        }
+
+        .box-drive .arrow {
+            position: absolute;
+            width: 0.27rem;
+            right: 0.37rem;
+        }
+
+        .box-drive .privacy-box {
+            color: #999;
+            font-size: 0.23rem;
+            margin-left: 0.24rem;
+        }
+
+        .box-drive .privacy-box a {
+            color: #67998c;
+            font-size: 0.23rem;
+            text-decoration: underline;
+        }
+
+        .box-drive #country {
+            cursor: pointer;
+        }
+
+        .box-drive #countrySelect {
+            max-height: 3rem;
+            display: none;
+            background-color: #fff;
+            position: absolute;
+            left: 0;
+            top: auto;
+            overflow-x: hidden;
+            overflow-y: auto;
+            width: calc(100% - 2px);
+            bottom: -3rem;
+        }
+
+        .box-drive #countrySelect li {
+            font-size: 0.28rem;
+            color: #333;
+            height: 0.6rem;
+            padding-left: 0.35rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: all 1s;
+        }
+
+        .box-drive #countrySelect li:hover {
+            background-color: #e9ebec;
+        }
+
+        .country-box {
+            z-index: 22;
+        }
+
+        .agree {
+            width: 100%;
+            flex: none;
+        }
+
+        .btn {
+            width: 100%;
+            height: 0.93rem;
+            background-color: #2c2e2e;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 0.28rem;
+            margin-top: 0.5rem;
+            cursor: pointer;
+        }
+
+        .drive-btn {
+            display: flex;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 1.62rem;
+            background-color: rgba(240, 240, 240, 0.9);
+            box-shadow: 0px -1px 0.41rem 0px #e4e4e4;
+            border: solid 1px #f0f0f0;
+            padding: 0.19rem 0.5rem 0.5rem;
+            z-index: 2501;
+            padding-bottom: constant(safe-area-inset-bottom);
+            /*兼容 IOS<11.2*/
+            padding-bottom: env(safe-area-inset-bottom);
+            /*兼容 IOS>11.2*/
+        }
+
+        .drive-btn div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 0.93rem;
+            background-color: #2c2e2e;
+            border-radius: 1px;
+            width: 100%;
+            font-size: 0.28rem;
+            color: #fff;
+        }
+
+        .close {
+            display: block;
+            color: #111111;
+            font-size: 0.28rem;
+        }
+    }

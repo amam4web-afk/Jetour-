@@ -1,0 +1,9 @@
+.dashing .carShow .carSwiper .swiper-slide .frontW_0{    top: 1.86rem; left: 1.2rem;}
+.dashing .carShow .carSwiper .swiper-slide .rearw_0{top: 1.86rem; left: 6.68rem;}
+.dashing .carShow .title img{width: 3.29rem;}
+.dashing .modelTestDrive .l img{width:7.57rem ;}
+@media (max-width: 1012px)
+{
+    .dashing .carShow .carSwiper .swiper-slide .frontW_0{    top: 1.43rem; left: 0.95rem;}
+    .dashing .carShow .carSwiper .swiper-slide .rearw_0{ top: 1.43rem; left: 5.2rem;}
+}

@@ -1,0 +1,491 @@
+@charset "UTF-8";
+#drive {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 55556;
+  display: none;
+}
+
+#drive .drive {
+  width: 8.4rem;
+  height: 8rem;
+  background-color: #fff;
+  position: absolute;
+  border-top: 0.04rem solid #68a598;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#drive .drive .title {
+  color: #4c4c4c;
+  font-size: 0.5rem;
+  text-align: center;
+  margin-top: 0.58rem;
+}
+
+#drive .drive .box {
+  padding: 0 1.68rem;
+  margin-top: 0.4rem;
+}
+
+#drive .drive .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+#drive .drive .left .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: 1px solid #000;
+}
+
+#drive .drive .left .top span {
+  font-size: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
+#drive .drive .left .top input {
+  background-color: transparent;
+  color: #000;
+  font-size: 0.2rem;
+  font-family: Roboto-Regular;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-bottom: 0.2rem;
+  padding-left: 0.02rem;
+  position: relative;
+  display: block;
+}
+
+#drive .drive .left .top img {
+  width: 0.2rem;
+  margin-bottom: 0.1rem;
+  cursor: pointer;
+}
+#drive .drive .left .top .password_icon{width: 0.32rem; height: 0.22rem;}
+#drive .drive .left .top .password_icon img{width: 100%;}
+#drive .drive .left .top .password_icon .on{display: none;}
+#drive .drive .left .top .password_icon.on .on{display: block;}
+#drive .drive .left .top .password_icon.on .off{display: none;}
+#drive .drive .left .top input::-webkit-input-placeholder {
+  /* WebKit browsers，webkit内核浏览器 */
+  color: #666;
+}
+
+#drive .drive .left .top input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #666;
+}
+
+#drive .drive .left .top input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #666;
+}
+
+#drive .drive .left .top input:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #666;
+}
+
+#drive .drive .left ul {
+  position: absolute;
+  background-color: #fff;
+  width: 100%;
+  top: 0.45rem;
+  left: 0rem;
+  max-height: 2rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  z-index: 2;
+}
+
+#drive .drive .left ul li {
+  color: #333;
+  height: 0.68rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 0.18rem;
+  padding-left: 0.35rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#drive .drive .left ul li:hover {
+  background-color: #e9ebec;
+}
+
+#drive .drive .left .bottom1 {
+  font-size: 0.17rem;
+  font-family: Roboto-Regular;
+  color: #b93838;
+  position: absolute;
+  bottom: -0.3rem;
+  left: 0.1rem;
+}
+
+.box6 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 0.3rem;
+  position: relative;
+}
+
+.box6 .select {
+  width: 0.3rem;
+  height: 0.3rem;
+  border: 1px solid #3e3e3e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.box6 .select img {
+  width: 0.17rem;
+}
+
+.box6 .text {
+  font-family: Roboto-Regular;
+  font-size: 0.2rem;
+  color: #000;
+  margin-left: 0.2rem;
+}
+.box6 .text span {
+  color: #68a598;
+  border-bottom: 1px solid #000;
+  cursor: pointer;
+}
+
+.box6 .bottom1 {
+  font-size: 0.17rem;
+  font-family: Roboto-Regular;
+  color: #b93838;
+  position: absolute;
+  top: 0.4rem;
+  left: 0;
+}
+
+#drive .drive .send {
+  width: 100%;
+  height: 0.68rem;
+  background-color: rgba(123, 123, 123, 0.1);
+  position: absolute;
+  bottom: 0;
+  color: #999;
+  font-size: 0.17rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#drive .drive .send1 {
+  width: 100%;
+  height: 0.68rem;
+  background-color: #68a598;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  font-size: 0.17rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#drive .drive .send-mb {
+  display: none;
+}
+
+#drive .drive .close {
+  position: absolute;
+  right: 0.26rem;
+  top: 0.26rem;
+  width: 0.19rem;
+  height: 0.19rem;
+  cursor: pointer;
+}
+
+#drive .drive .close img {
+  width: 100%;
+  height: 100%;
+}
+
+#drive .drive .close-mb {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #drive {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 55556;
+    display: none;
+  }
+  #drive .drive {
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+    position: absolute;
+    overflow-y: scroll;
+    border-top: 0rem solid #68a598;
+    left: 50%;
+    top: 50%;
+    padding-bottom: 1rem;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  #drive .drive .title {
+    color: #4c4c4c;
+    font-size: 0.76rem;
+    text-align: center;
+    margin-top: 1.8rem;
+  }
+  #drive .drive .box {
+    padding: 0 0.67rem;
+    margin-top: 0.7rem;
+  }
+  #drive .drive .left {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  #drive .drive .left .top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-bottom: 1px solid #000;
+  }
+  #drive .drive .left .top span {
+    font-size: 0.25rem;
+    padding-bottom: 0.33rem;
+  }
+  #drive .drive .left .top input {
+    background-color: transparent;
+    color: #000;
+    font-size: 0.25rem;
+    font-family: Roboto-Regular;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding-bottom: 0.33rem;
+    padding-left: 0.02rem;
+    position: relative;
+    display: block;
+  }
+  #drive .drive .left .top img {
+    width: 0.2rem;
+    margin-bottom: 0.1rem;
+    cursor: pointer;
+  }
+  #drive .drive .left .top input::-webkit-input-placeholder {
+    /* WebKit browsers，webkit内核浏览器 */
+    color: #666;
+  }
+  #drive .drive .left .top input:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #666;
+  }
+  #drive .drive .left .top input::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #666;
+  }
+  #drive .drive .left .top input:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: #666;
+  }
+  #drive .drive .left ul {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    top: 0.45rem;
+    left: 0rem;
+    max-height: 2rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    z-index: 2;
+  }
+  #drive .drive .left ul li {
+    color: #333;
+    height: 0.68rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 0.26rem;
+    padding-left: 0.35rem;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  #drive .drive .left ul li:hover {
+    background-color: #e9ebec;
+  }
+  #drive .drive .left .bottom1 {
+    font-size: 0.17rem;
+    font-family: Roboto-Regular;
+    color: #b93838;
+    position: absolute;
+    bottom: -0.3rem;
+    left: 0.1rem;
+  }
+  #drive .drive .send {
+    width: 100%;
+    height: 0.68rem;
+    background-color: rgba(123, 123, 123, 0.1);
+    position: absolute;
+    bottom: 0;
+    color: #999;
+    font-size: 0.17rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    display: none;
+  }
+  #drive .drive .send-mb {
+    width: 100%;
+    height: 0.8rem;
+    background-color: #000;
+    color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-size: 0.29rem;
+    font-family: Roboto-Medium;
+    width: 6.13rem;
+    margin: 0 auto;
+    margin-top: 0.8rem;
+  }
+  #drive .drive .send1 {
+    width: 100%;
+    height: 0.68rem;
+    background-color: #68a598;
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    font-size: 0.17rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    display: none;
+  }
+  #drive .drive .close {
+    position: absolute;
+    right: 0.26rem;
+    top: 0.26rem;
+    width: 0.19rem;
+    height: 0.19rem;
+    display: none;
+    cursor: pointer;
+  }
+  #drive .drive .close img {
+    width: 100%;
+    height: 100%;
+  }
+  #drive .drive .close-mb {
+    width: 0.96rem;
+    height: 0.96rem;
+    background-color: #000;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 1rem;
+  }
+  #drive .drive .close-mb img {
+    width: 0.28rem;
+    height: 0.28rem;
+  }
+}
+/*# sourceMappingURL=drive.css.map */

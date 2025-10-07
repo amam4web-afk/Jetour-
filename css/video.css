@@ -1,0 +1,293 @@
+.video-ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 13.78rem;
+  margin: 0 auto;
+  margin-top: 1.24rem;
+}
+
+.video-ul li {
+  height: 4.62rem;
+  width: 3.85rem;
+  margin-right: 0.47rem;
+  margin-bottom: 0.5rem;
+  -webkit-box-shadow: 0px 0.06rem 0.35rem 0px rgba(0, 0, 0, 0.06);
+          box-shadow: 0px 0.06rem 0.35rem 0px rgba(0, 0, 0, 0.06);
+  position: relative;
+  cursor: pointer;
+}
+
+.video-ul li .time {
+  position: absolute;
+  right: 0.14rem;
+  top: 2.6rem;
+  width: 0.64rem;
+  height: 0.37rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 0.05rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 0.17rem;
+  color: #fff;
+  
+}
+
+.video-ul li .top-img {
+  width: 100%;
+  height: 2.92rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.video-ul li .video-bottom {
+  height: 1.7rem;
+  position: relative;
+}
+
+.video-ul li .video-bottom .bg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.video-ul li .video-bottom .content-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.video-ul li .video-bottom .content-box .title {
+  font-size: 0.20rem;
+  color: #fff;
+  padding: 0.28rem 0.28rem 0 0.28rem;
+ display: -webkit-box; /* 将对象作为弹性伸缩盒子模型显示 */
+    -webkit-box-orient: vertical; /* 设置或检索伸缩盒对象的子元素的排列方式 */
+    -webkit-line-clamp: 2; /* 2行，只有 webkit内核支持 */
+    word-break: break-all; /* 纯英文换行 */
+    overflow: hidden;
+}
+
+.video-ul li .video-bottom .content-box .date-box {
+  position: absolute;
+  bottom: 0.38rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 0.38rem;
+}
+
+.video-ul li .video-bottom .content-box .date-box .date {
+  font-size: 0.20rem;
+  color: #fff;
+  
+}
+
+.video-ul li .video-bottom .content-box .date-box img {
+  width: 0.20rem;
+  cursor: pointer;
+}
+
+.video-ul li:nth-child(3n + 3) {
+  margin-right: 0;
+}
+
+.about-video-mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  z-index: 666666666;
+}
+
+.about-video-mask .play-video {
+  width: 80%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 8rem;
+}
+
+.about-video-mask .play-video video {
+  -o-object-fit: cover;
+     object-fit: cover;
+     width: 100%;
+     max-height: 100%;
+}
+
+.about-video-mask .close {
+  width: 0.47rem;
+  height: 0.47rem;
+  display: block;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  cursor: pointer;
+}
+
+@media (max-width: 1012px) {
+  .video-ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 0.6rem;
+    padding: 0 0.3rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .video-ul li {
+    height: 7.93rem;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0.6rem;
+    -webkit-box-shadow: 0px 0.06rem 0.35rem 0px rgba(0, 0, 0, 0.06);
+            box-shadow: 0px 0.06rem 0.35rem 0px rgba(0, 0, 0, 0.06);
+    position: relative;
+    cursor: pointer;
+  }
+  .video-ul li .time {
+    position: absolute;
+    right: 0.25rem;
+    top: 4.45rem;
+    width: 1.11rem;
+    height: 0.63rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 0.05rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 0.29rem;
+    color: #fff;
+    
+  }
+  .video-ul li .top-img {
+    width: 100%;
+    height: 5.26rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .video-ul li .video-bottom {
+    height: 2.67rem;
+    position: relative;
+  }
+  .video-ul li .video-bottom .bg {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .video-ul li .video-bottom .content-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  .video-ul li .video-bottom .content-box .title {
+    font-size: 0.28rem;
+    color: #fff;
+    padding: 0.38rem 0.38rem 0 0.38rem;
+  }
+  .video-ul li .video-bottom .content-box .date-box {
+    position: absolute;
+    bottom: 0.65rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 0.38rem 0 0.38rem;
+  }
+  .video-ul li .video-bottom .content-box .date-box .date {
+    font-size: 0.28rem;
+    color: #fff;
+    opacity: 0.56;
+    
+  }
+  .video-ul li .video-bottom .content-box .date-box img {
+    width: 0.28rem;
+    cursor: pointer;
+  }
+  .video-ul li:nth-child(3n + 3) {
+    margin-right: 0;
+  }
+  .about-video-mask {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    z-index: 666666666;
+  }
+  .about-video-mask .play-video {
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    height: 8rem;
+  }
+  .about-video-mask .play-video video {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .about-video-mask .close {
+    width: 0.47rem;
+    height: 0.47rem;
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    cursor: pointer;
+  }
+}
+/*# sourceMappingURL=video.css.map */

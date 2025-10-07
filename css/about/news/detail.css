@@ -1,0 +1,142 @@
+main .crumbs {
+  margin-top: 1.6rem;
+  margin-left: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .crumbs span {
+  
+  font-size: 0.2rem;
+  color: #4c4c4c;
+}
+
+main .crumbs img {
+  width: 0.07rem;
+  margin: 0 0.2rem;
+}
+
+main .content {
+  padding: 0 2.6rem;
+  margin-top: 1.2rem;
+}
+
+main .content h3 {
+  color: #4c4c4c;
+  font-size: 0.48rem;
+  line-height: 0.77rem;
+}
+
+main .content .date-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 0.4rem;
+}
+
+main .content .date-box img {
+  width: 0.17rem;
+}
+
+main .content .date-box div {
+  
+  font-size: 0.2rem;
+  color: #4c4c4c;
+  margin-left: 0.13rem;
+}
+
+main .rich-html {
+  
+  color: #4c4c4c;
+  font-size: 0.16rem;
+  line-height: 0.28rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+
+
+main .rich-html p img {
+  width: auto;
+  max-width: 100%;
+}
+main .rich-html img{
+  width: auto;
+  max-width: 100%;
+}
+@media (max-width: 767px) {
+  main {
+    width: 100%;
+  }
+  main .crumbs {
+    margin-top: 1.6rem;
+    margin-left: 0.48rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .crumbs span {
+    
+    font-size: 0.32rem;
+    color: #4c4c4c;
+  }
+  main .crumbs img {
+    width: 0.15rem;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  main .content {
+    padding: 0 0.6rem;
+    margin-top: 1.67rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  main .content h3 {
+    color: #4c4c4c;
+    font-size: 0.4rem;
+    line-height: 0.49rem;
+    width: 100%;
+    word-break: break-all;
+  }
+  main .content .date-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 0.35rem;
+  }
+  main .content .date-box img {
+    width: 0.21rem;
+  }
+  main .content .date-box div {
+    
+    font-size: 0.27rem;
+    color: #4c4c4c;
+    margin-left: 0.13rem;
+  }
+  main .rich-html {
+    
+    color: #4c4c4c;
+    font-size: 0.23rem;
+    line-height: 0.39rem;
+    margin-top: 0;
+    padding-bottom: 0.6rem;
+  }
+
+  
+}
+/*# sourceMappingURL=detail.css.map */

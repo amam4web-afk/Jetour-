@@ -1,0 +1,113 @@
+﻿@media (max-width: 1024px) {
+	.news .top{padding-left:1rem;}
+	.news .top .right-box{right:-5rem;}
+	.rest .r0 >div{left: 1.3rem;}
+	.rest .r1 >div{left: 0.55rem;}
+	.rest li:hover:first-child .p{display: none;}
+	.rest li:hover{width: 50%; transition: linear;}
+	.rest .r0:hover >div{left: 1.3rem;  transition: linear;}
+	.rest .r1:hover >div{left: 0.55rem;  transition: linear;}
+	.rest .r0:hover .p,.rest .r1:hover .p{display:none;}
+	
+}
+
+@media (max-width: 1012px) {
+	main .kv{ margin-top: 1rem; height: calc( 100vh - 1rem); width: 100%;}
+	main .kv .kv-swiper .swiper-wrapper .swiper-slide .word{
+		width: 6.47rem; height: 0.36rem;
+	}
+
+	main .kv .kv-swiper .swiper-wrapper .swiper-slide .t1{
+		top: 3.73rem; left: 0.48rem;
+	}
+	main .kv .kv-swiper .swiper-wrapper .swiper-slide .t2{
+		top: 3.73rem; left: 0.48rem;
+	}
+	main .kv .kv-swiper .swiper-wrapper .swiper-slide .t3{
+		top: 5.18rem; left: 0.48rem;
+	}
+	main .kv .kv-swiper .swiper-wrapper .swiper-slide .subject-word{
+		width: 5.57rem;
+		height: .86rem;
+	}
+	main .kv .kv-swiper .swiper-wrapper .swiper-slide .subject-word img {
+		/* top: 10rem; */
+		left: 0;
+	}
+	main .kv .kv-swiper .swiper-wrapper .swiper-slide .subject-position {
+		left: 0.96rem;
+	}
+	main .kv .kv-swiper .swiper-pagination{ bottom: 1rem;}
+	main .kv .kv-swiper .swiper-pagination .swiper-pagination-customs { width: 0.15rem; height: 0.15rem; margin:0 0.17rem; }
+	main .kv .kv-swiper .swiper-pagination .pagination-loop {  width:0.4rem; height: 0.4rem; margin:0 0.05rem;}
+	main .kv .kv-swiper .swiper-pagination .pagination-loop .point{width: 0.15rem;height: 0.15rem;}
+	.carShow{ height: 14rem; width: 100%; overflow: hidden; justify-content: initial;}
+	.carShow .list li{flex-wrap: wrap; margin-left:0.52rem;}
+	.carShow .list .word{margin-left:0; margin-top: 1.69rem; margin-bottom: 1rem; width: 80%;}
+	.carShow .list .introduce{font-size: 0.4rem; line-height: 0.4rem;}
+	.carShow .list .num_con{display: flex; justify-content: center; align-items: center; margin: 0; font-size: 0.26rem;}
+	.carShow .list .num_con >div{width: 1.8rem; margin-right: .5rem;}
+	.carShow .list .num_con .p .num{margin-right: 0.06rem; font-size: 0.52rem;}
+	.viewAll{width: 3.27rem; height: 0.7rem; font-size: 0.26rem;}
+	.carShow .swiper-model{ top: 7.44rem; height: 2.64rem;}
+	.carShow .swiper-model .carWrapper{ width: 7.5rem; height: 2.6rem;}
+	.carShow .swiper-model .carWrapper img{width: 100%;}
+	.carShow .bottom-box{left: 70%; bottom: 1.4rem;}
+	.carShow .bottom-box .swiper-btn-box{display: none;}
+	.carShow .list .word .p{margin-bottom: 0.34rem;}
+	.carShow .swiper-model .swiper-slide.T2 .wheels img{ width: 0.97rem; height: 0.97rem; }
+	.carShow .swiper-model .swiper-slide.T2 .wheels img:first-child{ top:1.38rem; left:1.3rem; }
+	.carShow .swiper-model .swiper-slide.T2 .wheels img:last-child{ top:1.38rem; right:1.7rem; }
+	.carShow .swiper-model .swiper-slide.dashing .wheels img{ width: 0.97rem; height: 0.97rem; }
+	.carShow .swiper-model .swiper-slide.dashing .wheels img:first-child{ top:1.16rem; left:1.56rem; }
+	.carShow .swiper-model .swiper-slide.dashing .wheels img:last-child{ top:1.16rem; right:1.53rem; }
+	.carShow .swiper-model .swiper-slide.x70plus .wheels img{ width:1rem; height:1rem; }
+	.carShow .swiper-model .swiper-slide.x70plus .wheels img:first-child{ top:1.18rem; left:1.46rem; }
+	.carShow .swiper-model .swiper-slide.x70plus .wheels img:last-child{ top:1.18rem; right:1.64rem; }
+	.carShow .swiper-model .swiper-slide.x70 .wheels img{ width: 0.96rem; height: 0.96rem; }
+	.carShow .swiper-model .swiper-slide.x70 .wheels img:first-child{ top:1.26rem; left:1.48rem; }
+	.carShow .swiper-model .swiper-slide.x70 .wheels img:last-child{ top:1.26rem; right:1.68rem; }
+	.carShow .swiper-model .swiper-slide.x90plus .wheels img{ width: 0.92rem; height: 0.92rem; }
+	.carShow .swiper-model .swiper-slide.x90plus .wheels img:first-child{ top:1.26rem; left:1.4rem;}
+	.carShow .swiper-model .swiper-slide.x90plus .wheels img:last-child{ top:1.26rem; right:1.7rem;}
+	.carShow .swiper-model .swiper-slide.x95 .wheels img{ width:0.98rem; height: 0.98rem; }
+	.carShow .swiper-model .swiper-slide.x95 .wheels img:first-child{ top:1.26rem; left:1.36rem;}
+	.carShow .swiper-model .swiper-slide.x95 .wheels img:last-child{ top:1.26rem; right:1.6rem;}
+	.carShow .swiper-model .swiper-slide.X50 .wheels img{width: 1rem; height: 1rem;}
+	.carShow .swiper-model .swiper-slide.X50 .wheels img:first-child{ top:1.3rem; left:1.52rem; }
+	.carShow .swiper-model .swiper-slide.X50 .wheels img:last-child{ top:1.3rem; right:1.4rem; }
+	.carShow .swiper-model .swiper-slide.T1 .wheels img{ width: 0.97rem; height: 0.97rem; }
+	.carShow .swiper-model .swiper-slide.T1 .wheels img:first-child{ top: 1.36rem; left: 1.34rem; }
+	.carShow .swiper-model .swiper-slide.T1 .wheels img:last-child{ top:1.36rem; right:1.6rem; }
+	.carShow .swiper-model .swiper-slide.T2iDM .wheels img{ width: 0.97rem; height: 0.97rem; }
+	.carShow .swiper-model .swiper-slide.T2iDM .wheels img:first-child{ top: 1.38rem; left: 1.26rem;}
+	.carShow .swiper-model .swiper-slide.T2iDM .wheels img:last-child{ top: 1.38rem;  right: 1.68rem; }
+
+	.carShow .bottom-box .bottom-box-swiper-box .swiper-slide>div{font-size: 0.24rem;}
+	.carShow .bottom-box .bottom-box-swiper-box{width: 10rem;}
+	.playDirectly{height: 14.36rem;}
+	.playDirectly .videoWrapper{display: flex; justify-items: center; align-items: center; background-color: #000;}
+	.video.playDirectly video{height: 100%; object-fit:cover;}
+	
+	/* .news-mb{ padding-top:1.68rem; padding-left: 0.42rem;}
+	.news .top{ height: 100%; padding-left:0;}
+	.news .top .left-box{ height: 100%;} */
+	/* .news .top .right-box{width: 11.9rem; top: 3.1rem;} */
+	/* .news .top .right-box .news-swiper .swiper-slide{width: 5.73rem; height: 7.32rem;}
+	.news .top .right-box{ right: initial; left: 0;}
+	.news .top .right-box .news-swiper{height:7.35rem;} */
+	.rest{ background-image: url(../images/rest/bottom_bg_m.jpg); margin-top: 1.34rem; flex-wrap: wrap; height: 12.96rem; justify-content:center}
+	
+	.rest li{width: 88%; height: 50%; background: none; display: flex; align-items: center;}
+	.rest li:first-child{border-bottom: 2px solid #fff;}
+	.rest li .slogan{ font-size: 0.4rem; line-height: 0.55rem;}
+	.rest .r0 >div,.rest .r1 >div{ position: initial;}
+	.rest .r0 >div{width: 5.6rem;}
+	.rest .viewAll{margin-top:0.66rem;}
+	.rest li:hover{width: 88%; transition: linear;}
+	.rest li:hover:first-child .p{display: none;}
+	.rest .r0:hover >div{left: 2.32rem;  transition: linear;}
+	.rest .r0:hover .p{display: none;}
+	.rest .r1:hover >div{ left: 2.32rem;  transition: linear;}
+	.rest .r1:hover .p{display: none;}
+}

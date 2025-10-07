@@ -1,0 +1,34 @@
+@charset "UTF-8";
+/* 气泡按钮 */
+.button-bubble {
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.button-bubble::before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background-color: #ff874a;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transform: translate3d(-50%, -50%, 0) scale(0, 0);
+  transform: translate3d(-50%, -50%, 0) scale(0, 0);
+  -webkit-transition: -webkit-transform 0.45s;
+  transition: -webkit-transform 0.45s;
+  transition: transform 0.45s;
+  transition: transform 0.45s, -webkit-transform 0.45s;
+}
+
+.button-bubble:hover::before {
+  z-index: -1;
+  -webkit-transform: translate3d(-50%, -50%, 0) scale(15, 15);
+  transform: translate3d(-50%, -50%, 0) scale(15, 15);
+}
+/*# sourceMappingURL=global.css.map */

@@ -1,0 +1,232 @@
+.science {
+  width: 100%;
+  background-color: #b8d1ce;
+  padding: 1.5rem 1.4rem;
+  position: relative;
+}
+
+.science .title {
+  font-size: 0.18rem;
+  color: #333;
+  position: absolute;
+  top: 0.93rem;
+  left: 1.4rem;
+  font-family: Roboto-Medium;
+  letter-spacing: 0.04rem;
+}
+
+.science .video-btn {
+  width: 1.51rem;
+  height: 1.51rem;
+  background-color: #ff874a;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2222;
+  -webkit-transition: width 0.2s ease 0s, height 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
+  transition: width 0.2s ease 0s, height 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
+  transition: width 0.2s ease 0s, height 0.2s ease 0s, transform 0.2s ease 0s;
+  transition: width 0.2s ease 0s, height 0.2s ease 0s, transform 0.2s ease 0s, -webkit-transform 0.2s ease 0s;
+  overflow: hidden;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  pointer-events: none;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  box-pack: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  box-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.science .video-btn img {
+  width: 0.3rem;
+  height: 0.3rem;
+}
+
+.science .science-video-box-out {
+  height: 7.2rem;
+  width: 12.5rem;
+  margin: 0 auto;
+}
+
+.science .science-video-box {
+  position: relative;
+  height: 6.75rem;
+  max-width: 12rem;
+  margin: 0.2rem auto;
+}
+
+.science .science-video-box .science-video-title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 0.45rem;
+  font-weight: bold;
+  line-height: 1;
+  -webkit-transition: all 2s;
+  transition: all 2s;
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+}
+
+.science #science-video {
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transition: all 2s;
+  transition: all 2s;
+}
+
+.science .btn-more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  bottom: 0.84rem;
+  font-size: 0.16rem;
+  color: #333;
+  font-family: Roboto-Medium;
+  letter-spacing: 0.04rem;
+  cursor: pointer;
+  right: 1.4rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.science .btn-more img {
+  width: 0.17rem;
+  height: 0.14rem;
+  margin-left: 0.24rem;
+}
+
+.science .btn-more:hover {
+  color: #ff874a;
+}
+
+.home-mb-science {
+  background-color: #bdd0ce;
+}
+
+.home-mb-science .title {
+  font-size: 0.27rem;
+  color: #333;
+  font-family: Roboto-Medium;
+  padding: 1.5rem 0 0 0.73rem;
+}
+
+.home-mb-science .science-mb-video {
+  margin: 0.74rem 0 0.95rem 0;
+  height: 5.73rem;
+  position: relative;
+}
+
+.home-mb-science .science-mb-video .science-mb-mask {
+  position: absolute;
+  background-image: url(/images/video/cover.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  padding-top: 1rem;
+  z-index: 100;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.home-mb-science .science-mb-video .science-mb-mask .science-mb-mask-title {
+  text-align: center;
+  font-size: 0.72rem;
+  color: #fff;
+}
+
+.home-mb-science .science-mb-video .science-mb-mask .img-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 0.7rem;
+}
+
+.home-mb-science .science-mb-video .science-mb-mask .img-box img {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.home-mb-science .science-mb-video .science-mb-mask .img-box div {
+  font-size: 0.27rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-family: Roboto-Medium;
+  margin-top: 0.2rem;
+}
+
+.home-mb-science .science-mb-video1 {
+  height: 5.03rem;
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.home-mb-science .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 0 0.76rem 1.55rem 0;
+}
+
+.home-mb-science .btn div {
+  font-family: Roboto-Medium;
+  color: #333;
+  font-size: 0.25rem;
+}
+
+.home-mb-science .btn img {
+  width: 0.25rem;
+  height: 0.21rem;
+  margin-left: 0.3rem;
+}
+
+.prism-big-play-btn {
+  display: none !important;
+}
+
+.prism-player video {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=science.css.map */

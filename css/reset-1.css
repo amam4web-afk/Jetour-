@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+  font-family: Roboto-Black;
+  src: url("/data/tms/website/html/font/Roboto-Black.ttf");
+}
+@font-face {
+  font-family: Roboto-Medium;
+  src: url("/data/tms/website/html/font/Roboto-Medium.ttf");
+}
+@font-face {
+  font-family: Roboto-Regular;
+  src: url("/data/tms/website/html/font/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: Roboto;
+  src: url("/data/tms/website/html/font/Roboto.ttf");
+}
+@font-face {
+  font-family: Poppins;
+  src: url("/data/tms/website/html/font/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: Poppins-Medium;
+  src: url("/data/tms/website/html/font/Poppins-Medium.ttf");
+}
+@font-face {
+  font-family: Poppins-Light;
+  src: url("/data/tms/website/html/font/Poppins-Light.ttf");
+}
+@font-face {
+  font-family: Poppins-SemiBold;
+  src: url("/data/tms/website/html/font/Poppins-SemiBold.ttf");
+}
+@font-face {
+  font-family:Poppins-Bold;
+  src: url("/data/tms/website/html/font/Poppins-Bold.ttf");
+}
+html,
+body {
+  /* font-family: Poppins; */
+  font-family: Roboto-Regular;
+}
+div {
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+  border: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+input {
+  border: none;
+}
+input:focus {
+  outline: none;
+}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {
+  /* font-family: Poppins; */
+  font-family: Roboto-Regular;
+  color: #ccc;
+}
+input:-moz-placeholder,textarea:-moz-placeholder {
+  /* font-family: Poppins; */
+  font-family: Roboto-Regular;
+  color: #ccc;
+}
+input::-moz-placeholder ,textarea::-moz-placeholder{
+  /* font-family: Poppins; */
+  font-family: Roboto-Regular;
+  color: #ccc;
+}
+input:-ms-input-placeholder ,textarea:-ms-input-placeholder{
+  /* font-family: Poppins; */
+  font-family: Roboto-Regular;
+  color: #ccc;
+}
+
+@media (min-width: 1012px)
+{	
+	  .mb-only {
+		display: none !important;
+	  }
+}
+@media (max-width: 1012px)
+{	
+	.pc-pad {
+    display: none !important;
+  }
+}
+/* @media (max-width: 1012px) {
+  .mb-only {
+    display: block;
+  }
+  .pc-pad {
+    display: none;
+  }
+} */
